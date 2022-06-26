@@ -174,13 +174,13 @@ class MyCustomFormState extends State<MyCustomForm> {
           new Container(
               key: ValueKey('submitButton'),
               padding: const EdgeInsets.only(left: 150.0, top: 40.0),
-              child: new RaisedButton(
+              child: new ElevatedButton(
                 child: const Text('Submit'),
                 onPressed: () {
                   // It returns true if the form is valid, otherwise returns false
                   if (_formKey.currentState.validate()) {
                     // If the form is valid, display a Snackbar.
-                    Scaffold.of(context)
+                    ScaffoldMessenger.of(context)
                         .showSnackBar(SnackBar(content: Text('Data is in processing.')));
                   }
                 },
